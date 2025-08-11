@@ -31,12 +31,14 @@ A big part of my Ph.D. was black-hole physics. You can’t literally peek inside
 
 During undergrad at IIT Bombay, I explored a mix of problems: searching for dark-matter signatures in dwarf spheroidal galaxies with Fermi-LAT data; forecasting thunderstorms via time-series analysis of KUMODeS II measurements; studying the entanglement structure of AKLT models; and numerically analyzing the ringdown of a black hole. That last project earned me an Undergraduate Research Award, and I wrote an accessible introduction for Resonance.
 
-I’m excited to bring this toolkit to markets and large-scale data problems—partnering with researchers and engineers and iterating quickly from idea to impact. You can reach me on LinkedIn (link below).
+Off-hours, I’m grinding Destiny 2 speedruns—tweaking routes, theorycrafting, and celebrating when a PB drops. I also cook a lot of Indian food, and I bike on weekends to reset.
 
+I’m excited to bring this toolkit to markets and large-scale data problems—partnering with researchers and engineers and iterating quickly from idea to impact. You can reach out to me on LinkedIn by clicking the link at the bottom of the page.
+
+
+<!-- 
 **Core stack:** Python, SQL, Pandas, NumPy, SciPy, scikit-learn  
-**What I value:** measurable impact, well-tested code, explainable models, and clear communication
-
-<!-- # Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+**What I value:** measurable impact, well-tested code, explainable models, and clear communication# Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
 #Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
 
