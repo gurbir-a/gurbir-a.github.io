@@ -3,121 +3,83 @@
   contents:
   - title: PhD in Physics
     institution: Brandeis University, Waltham, MA
-    year: Aug 2019 — Dec 2025
+    year: Aug''19-Dec''25
     description:
     - 'GPA: 3.95'
-    - https://www.brandeis.edu/
   - title: B.Tech in Engineering Physics
     institution: Indian Institute of Technology Bombay, Mumbai
-    year: Jul 2015 — Aug 2019
+    year: Jul''15-Aug''19
     description:
     - 'GPA: 9.42'
-    - https://www.iitb.ac.in/
 - title: Publications
   type: time_table
   contents:
   - title: Locality and the Python's Lunch Conjecture
     year: '2025'
     description:
-    - 'Venue: In Preparation'
+    - 'In Preparation'
   - title: Geometric Surprises in the Python's Lunch Conjecture
     year: '2024'
     link: https://scipost.org/SciPostPhys.16.6.152
-    description:
-    - 'Venue: SciPost'
-    - We uncovered some exotic properties of an index-1 surface which we did not expect, by borrowing ideas from Almgren-Pitts min-max theory.
+    description: We uncovered some exotic properties of an index-1 surface which we did not expect, by borrowing ideas from Almgren-Pitts min-max theory.
   - title: Quasinormal Modes of Black Holes
     year: '2020'
     link: https://link.springer.com/article/10.1007/s12045-020-1056-1
-    description:
-    - 'Venue: Springer'
-    - This is an introductory and accessible article on Quasinormal modes of a black hole.
+    description: This is an introductory and accessible article on Quasinormal modes of a black hole.
 - title: Research & Projects
   type: time_table
   contents:
   - title: Tensor Network Analysis of Python’s Lunch Conjecture
-    year: Jan 2024 — Present
-    description:
-    - Collaborated on tensor-network approaches to black-hole interior reconstruction, investigating how newly identified bulge-surface geometry affects algorithms and providing evidence for faster information extraction.
-    - • Random-matrix–driven TN simulations
-    - • Statistical analysis of non-isometricity in TNs
-    - • Cross-team collaboration (Headrick, Lawrence, Sasieta, Swingle, Wolfe)
+    year: Jan''24-Now
+    description: Collaborated on tensor-network approaches to black-hole interior reconstruction, investigating how newly identified bulge-surface geometry affects algorithms and providing evidence for faster information extraction.
   - title: Geometrical Analysis of Python’s Lunch Conjecture
-    year: Nov 2022 — Jan 2024
-    description:
-    - Analyzed time complexity for interior reconstruction and developed a mathematical framework for the bulge surface; solved PDE eigenvalue problems in multiple geometries with implications for tensor networks.
-    - • Time-complexity analysis for reconstruction
-    - • PDE eigenvalues across geometries
-    - • Implications for tensor-network design
+    year: Nov''22-Jan''24
+    description: Analyzed time complexity for interior reconstruction and developed a mathematical framework for the bulge surface; solved PDE eigenvalue problems in multiple geometries with implications for tensor networks.
   - title: Entanglement Entropy in Field Theories (Bachelor’s Thesis)
-    year: Jul 2018 — May 2019
-    description:
-    - Reviewed entanglement entropy in the 2D AKLT model, the replica trick for 2D CFTs, and the quantum Hall effect via Chern–Simons theory; integrated methods across lattice models and continuum field theory.
-    - • AKLT entanglement entropy (2D)
-    - • Replica trick in 2D CFT
-    - • Quantum Hall via Chern–Simons
+    year: Jul''18-May''19
+    description: Reviewed entanglement entropy in the 2D AKLT model, the replica trick for 2D CFTs, and the quantum Hall effect via Chern–Simons theory; integrated methods across lattice models and continuum field theory.
   - title: Supersymmetric Path Integrals and the Index Theorems
-    year: May 2018 — Jul 2018
-    description:
-    - Studied 0+1D supersymmetry and superspace; rederived Gauss–Bonnet and Hirzebruch signature results; reproduced the Dirac index leading to the Atiyah–Singer index theorem; explored localization for SUSY path integrals.
-    - • 0+1D SUSY & superspace
-    - • Gauss–Bonnet & Hirzebruch signature
-    - • Atiyah–Singer via Dirac index
-    - • Localization for SUSY path integrals
+    year: May''18-Jul''18
+    description: Studied 0+1D supersymmetry and superspace; rederived Gauss–Bonnet and Hirzebruch signature results; reproduced the Dirac index leading to the Atiyah–Singer index theorem; explored localization for SUSY path integrals.
   - title: Quasinormal Modes of Black Holes
-    year: Jul 2017 — Nov 2017
+    year: Jul''17-Nov''17
     link: https://doi.org/10.1007/s12045-020-1056-1
-    description:
-    - Analyzed ringdown behavior using analytic methods for Schwarzschild and Reissner–Nordström black holes and extended the study to f(R) gravity; later published an accessible overview.
-    - • Analytic QNM techniques
-    - • Schwarzschild & Reissner–Nordström
-    - • Extension to f(R) gravity
+    description: Analyzed ringdown behavior using analytic methods for Schwarzschild and Reissner–Nordström black holes and extended the study to f(R) gravity; later published an accessible overview.
   - title: Cosmic Microwave Background Detection
-    year: May 2017 — May 2017
-    description:
-    - Worked with the KUMODeS II receiver (KEK) to detect atmospheric water vapor and CMB signatures; explored adapting CMB-detection techniques for weather forecasting with Python-based analysis and modeling.
-    - • KUMODeS II instrumentation (KEK)
-    - • CMB detection methods
-    - • Atmospheric water-vapor retrieval
-    - • Python analysis & modeling
+    year: May''17
+    description: Worked with the KUMODeS II receiver (KEK) to detect atmospheric water vapor and CMB signatures; explored adapting CMB-detection techniques for weather forecasting with Python-based analysis and modeling.
   - title: Analysis of Dwarf Spheroidal Galaxies for Dark Matter Signal
-    year: Feb 2017 — Jul 2017
-    description:
-    - Processed Fermi-LAT GeV data on an HPC cluster; modeled fluxes using CLUMPY J-factors and density profiles; used HEALPix masking and χ² fits to estimate NFW parameters.
-    - • Fermi-LAT pipeline (HPC)
-    - • CLUMPY J-factors & density profiles
-    - • HEALPix masking & visualization
-    - • NFW parameter estimation
+    year: Feb''17-Jul''17
+    description: Processed Fermi-LAT GeV data on an HPC cluster; modeled fluxes using CLUMPY J-factors and density profiles; used HEALPix masking and χ² fits to estimate NFW parameters.
 - title: Skills
   type: map
   contents:
-  - name: Physics
-    value: Gravity, Quantum Field Theory, Holography
-  - name: Mathematics
-    value: Probability, Statistics, Linear Algebra, PDE analysis, Differential Geometry
+  - name: Tech Stack
+    value: Python, C++, SQL, Pandas, Numpy, Scipy, scikit-learn
   - name: Computer Science
     value: Machine Learning, Artificial Intelligence
+  - name: Mathematics
+    value: Probability, Statistics, Linear Algebra, PDE analysis, Differential Geometry
+  - name: Physics
+    value: Gravity, Quantum Field Theory, Holography
 - title: Volunteer
   type: time_table
   contents:
   - title: Teacher
     institution: National Service Scheme, Mumbai
-    year: Aug 2019 — Aug 2020
-    description:
-    - I volunteered to teach computer skills to students from low-income communities, covering digital fundamentals, Microsoft Word, and Excel.
+    year: Aug''19-Aug''20
+    description: I volunteered to teach computer skills to students from low-income communities, covering digital fundamentals, Microsoft Word, and Excel.
 - title: Honors & Awards
   type: time_table
   contents:
   - title: Undergraduate Research Award
     institution: Indian Institute of Technology Bombay
     year: '2019'
-    description:
-    - Conferred for junior year thesis titled, `Quasinormal Modes of Black Holes'
+    description: Conferred for junior year thesis titled, `Quasinormal Modes of Black Holes'
   - title: Runner-up for Data Analysis Championship
     institution: Indian Institute of Technology Bombay
     year: '2018'
-    description:
-    - My team and I came up with an algorithm to isolate a signal for a gravitational wave and inferred the mass of merger.
+    description: My team and I came up with an algorithm to isolate a signal for a gravitational wave and inferred the mass of merger.
 - title: References
   type: list
   contents:
