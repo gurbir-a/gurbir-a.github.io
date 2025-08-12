@@ -27,11 +27,11 @@ latest_posts:
 
 I’m a physicist with a Ph.D. from Brandeis University. I build quantitative models in Python for complex systems, leveraging ideas in probability, statistics, machine learning, and numerical methods.
 
-A big part of my Ph.D. was black-hole physics. You can’t literally peek inside one, but they emit Hawking radiation that encodes information about the interior. I built analytical tools and Python checks to verify when interior-reconstruction protocols work and how long reconstruction would take. Along the way we found that the standard reconstruction protocol breaks for certain spacetimes. So my collaborators and I proposed a variant that fixes it. Details are in a forthcoming paper.
+A big part of my Ph.D. was about understanding black holes, especially their interior. But we can’t peek inside one; however, there is a saving grace in the form of Hawking radiation—it encodes information about the interior. I built analytical tools and Python checks to verify when interior-reconstruction protocols work and how long reconstruction would take. Along the way we found that the standard reconstruction protocol breaks for certain spacetimes. So my collaborators and I pointed it out in 2024 and we are in the process of finishing up work on a variant that fixes the issue.
 
 During undergrad at IIT Bombay, I explored a mix of problems: searching for dark-matter signatures in dwarf spheroidal galaxies with Fermi-LAT data; forecasting thunderstorms via time-series analysis of KUMODeS II measurements; studying the entanglement structure of AKLT models; and numerically analyzing the ringdown of a black hole. That last project earned me an Undergraduate Research Award, and I wrote an accessible introduction for Resonance.
 
-Off-hours, I’m grinding Destiny 2 speedruns—tweaking routes, theorycrafting, and celebrating when a PB drops. I love learning about aviation-one of my favorite activities is plane spotting. I also cook a lot of Indian food, and I bike on weekends to reset.
+Off-hours, I’m grinding Destiny 2 speedruns—tweaking routes, theorycrafting, and celebrating when a PB drops. I love learning about aviation—one of my favorite activities is plane spotting. I also cook a lot of Indian food, and I bike on weekends to reset.
 
 I’m excited to bring this toolkit to markets and large-scale data problems—partnering with researchers and engineers and iterating quickly from idea to impact. You can reach out to me on LinkedIn by clicking the link at the bottom of the page.
 
