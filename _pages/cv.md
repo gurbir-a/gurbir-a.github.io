@@ -5,7 +5,7 @@ title: cv
 nav: true
 nav_order: 5
 cv_pdf: # you can also use external links here
-description: Gurbir Arora's CV
+description:
 toc:
   sidebar: left
 ---
