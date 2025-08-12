@@ -67,17 +67,63 @@
       "summary": "This is an introductory and accessible article on Quasinormal modes of a black hole."
     }
   ],
+    "skills": [
+    {
+      "name": "Tech Stack",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "Python",
+        "C++",
+        "Pandas",
+        "Numpy",
+        "Scipy",
+        "scikit-learn"
+      ]
+    },
+    {
+      "name": "Computer Science",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "Machine Learning",
+        "Artificial Intelligence"
+      ]
+    },
+    {
+      "name": "Physics",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "Gravity",
+        "Quantum Field Theory",
+        "Holography"
+      ]
+    },
+    {
+      "name": "Mathematics",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "Probability",
+        "Statistics",
+        "Linear Algebra",
+        "PDE analysis",
+        "Differential Geometry"
+      ]
+    }
+  ],
   "projects": [
     {
     "name": "Tensor Network Analysis of Python’s Lunch Conjecture",
-    "summary": "Collaborated on tensor-network approaches to black-hole interior reconstruction, investigating how newly identified bulge-surface geometry affects algorithms and providing evidence for faster information extraction.",
+    "summary": "Collaborated on Tensor Network approaches to black-hole interior reconstruction, investigating how newly identified bulge-surface geometry affects algorithms and providing evidence for faster information extraction.",
     "startDate": "2024-01-01",
     "endDate": "2025-07-31",
     "url": ""
   },
   {
     "name": "Geometrical Analysis of Python’s Lunch Conjecture",
-    "summary": "Analyzed time complexity for interior reconstruction and developed a mathematical framework for the bulge surface; solved PDE eigenvalue problems in multiple geometries with implications for tensor networks.",
+    "summary": "Analyzed time complexity for interior reconstruction and developed a mathematical framework for the bulge surface; solved PDE eigenvalue problems in multiple geometries with implications for Tensor Networks.",
     "startDate": "2022-11-01",
     "endDate": "2024-01-01",
     "url": ""
@@ -130,52 +176,6 @@
       "date": "2018",
       "awarder": "Indian Institute of Technology Bombay",
       "summary": "My team and I came up with an algorithm to isolate a signal for a gravitational wave and inferred the mass of merger."
-    }
-  ],
-  "skills": [
-    {
-      "name": "Tech Stack",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Python",
-        "C++",
-        "Pandas",
-        "Numpy",
-        "Scipy",
-        "scikit-learn"
-      ]
-    },
-    {
-      "name": "Computer Science",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Machine Learning",
-        "Artificial Intelligence"
-      ]
-    },
-    {
-      "name": "Physics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Gravity",
-        "Quantum Field Theory",
-        "Holography"
-      ]
-    },
-    {
-      "name": "Mathematics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Probability",
-        "Statistics",
-        "Linear Algebra",
-        "PDE analysis",
-        "Differential Geometry"
-      ]
     }
   ],
   "volunteer": [
