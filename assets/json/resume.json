@@ -64,7 +64,7 @@
       "publisher": "Springer",
       "releaseDate": "2020-10-29",
       "url": "https://link.springer.com/article/10.1007/s12045-020-1056-1",
-      "summary": "This is an introductory and accessible article on Quasinormal modes of a black hole."
+      "summary": "This is an introductory, accessible article on quasinormal modes of a black hole."
     }
   ],
     "skills": [
@@ -76,8 +76,8 @@
         "Python",
         "C++",
         "Pandas",
-        "Numpy",
-        "Scipy",
+        "NumPy",
+        "SciPy",
         "scikit-learn"
       ]
     },
@@ -122,7 +122,7 @@
     "url": ""
   },
   {
-    "name": "Geometrical Analysis of Python’s Lunch Conjecture",
+    "name": "Geometric Analysis of Python’s Lunch Conjecture",
     "summary": "Analyzed time complexity for interior reconstruction and developed a mathematical framework for the bulge surface; solved PDE eigenvalue problems in multiple geometries with implications for Tensor Networks.",
     "startDate": "2022-11-01",
     "endDate": "2024-01-01",
@@ -169,13 +169,13 @@
       "title": "Undergraduate Research Award",
       "date": "2019",
       "awarder": "Indian Institute of Technology Bombay",
-      "summary": "Conferred for junior year thesis titled, “Quasinormal Modes of Black Holes.”"
+      "summary": "Conferred for junior year thesis titled “Quasinormal Modes of Black Holes.”"
     },
     {
       "title": "Runner-up for Data Analysis Championship",
       "date": "2018",
       "awarder": "Indian Institute of Technology Bombay",
-      "summary": "My team and I came up with an algorithm to isolate a signal for a gravitational wave and inferred the mass of merger."
+      "summary": "My team and I developed an algorithm to isolate a gravitational-wave signal and inferred the merger mass."
     }
   ],
   "volunteer": [
