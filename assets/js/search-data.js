@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "cv",
-          description: "Gurbir Arora&#39;s CV",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
