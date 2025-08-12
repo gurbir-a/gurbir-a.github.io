@@ -18,7 +18,7 @@
       {
         "network": "LinkedIn",
         "username": "arora-g",
-        "url": "https://linkedin.com/arora-a"
+        "url": "https://linkedin.com/in/arora-g"
       }
     ]
   },
@@ -29,8 +29,8 @@
       "url": "https://www.brandeis.edu/",
       "area": "Physics",
       "studyType": "PhD",
-      "startDate": "Aug 2019",
-      "endDate": "Dec 2025",
+      "startDate": "2019-08-01",
+      "endDate": "2025-12-01",
       "score": "3.95"
     },
     {
@@ -39,8 +39,8 @@
       "url": "https://www.iitb.ac.in/",
       "area": "Engineering Physics",
       "studyType": "B.Tech",
-      "startDate": "July 2015",
-      "endDate": "Aug 2019",
+      "startDate": "2015-07-15",
+      "endDate": "2019-07-31",
       "score": "9.42"
     }
   ],
@@ -55,14 +55,14 @@
     {
       "name": "Geometric Surprises in the Python's Lunch Conjecture",
       "publisher": "SciPost",
-      "releaseDate": "6/12/2024",
+      "releaseDate": "2024-6-12",
       "url": "https://scipost.org/SciPostPhys.16.6.152",
       "summary": "We uncovered some exotic properties of an index-1 surface which we did not expect, by borrowing ideas from Almgren-Pitts min-max theory."
     },
     {
       "name": "Quasinormal Modes of Black Holes",
       "publisher": "Springer",
-      "releaseDate": "10/29/2020",
+      "releaseDate": "2020-10-29",
       "url": "https://link.springer.com/article/10.1007/s12045-020-1056-1",
       "summary": "This is an introductory and accessible article on Quasinormal modes of a black hole."
     }
@@ -77,7 +77,7 @@
       "Cross-team collaboration (Headrick, Lawrence, Sasieta, Swingle, Wolfe)"
     ],
     "startDate": "2024-01-01",
-    "endDate": "Present",
+    "endDate": "2025-07-31",
     "url": ""
   },
   {
@@ -199,7 +199,7 @@
       "icon": "fa-solid fa-hashtag",
       "keywords": [
         "Machine Learning",
-        "Artifical Intelligence"
+        "Artificial Intelligence"
       ]
     }
   ],
@@ -208,8 +208,8 @@
       "organization": "National Service Scheme",
       "location": "Mumbai",
       "position": "Teacher",
-      "startDate": "Aug 2019",
-      "endDate": "Aug 2020",
+      "startDate": "2019-08-01",
+      "endDate": "2020-08-01",
       "summary": "I volunteered to teach computer skills to students from low-income communities, covering digital fundamentals, Microsoft Word, and Excel."
     }
   ],
