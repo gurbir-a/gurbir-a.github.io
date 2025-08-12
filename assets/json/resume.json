@@ -1,137 +1,173 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Gurbir Arora",
+    "label": "Researcher",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "",
+    "phone": "",
+    "url": "https://gurbir-a.github.io/",
+    "summary": "",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
+      "address": "",
+      "postalCode": "",
+      "city": "Boston",
       "countryCode": "US",
-      "region": "California"
+      "region": "Massachusetts"
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "network": "LinkedIn",
+        "username": "arora-g",
+        "url": "https://linkedin.com/arora-a"
       }
     ]
   },
-  "work": [
-    {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
-    }
-  ],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
+      "institution": "Brandeis University",
+      "location": "Waltham, MA",
+      "url": "https://www.brandeis.edu/",
+      "area": "Physics",
       "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
-      "courses": ["Theory of Relativity"]
-    }
-  ],
-  "awards": [
-    {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-location-dot"
+      "startDate": "Aug 2019",
+      "endDate": "Dec 2025",
+      "score": "3.95",
     },
     {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-tag"
-    },
-    {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-envelope"
-    },
-    {
-      "name": "Quantum Cryptography",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-hashtag"
-    },
-    {
-      "name": "Quantum Communication",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-calendar"
-    },
-    {
-      "name": "Quantum Teleportation",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-clipboard-check"
+      "institution": "Indian Institute of Technology Bombay",
+      "location": "Mumbai",
+      "url": "https://www.iitb.ac.in/",
+      "area": "Engineering Physics",
+      "studyType": "B.Tech",
+      "startDate": "July 2015",
+      "endDate": "Aug 2019",
+      "score": "9.42",
     }
   ],
   "publications": [
     {
-      "name": "Zur Elektrody/namik bewegter Körper",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-06-30",
-      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-      "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
+      "name": "Locality and the Python's Lunch Conjecture",
+      "publisher": "In Preparation",
+      "releaseDate": "2025",
+      "url": "",
+      "summary": ""
     },
     {
-      "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
+      "name": "Geometric Surprises in the Python's Lunch Conjecture",
+      "publisher": "SciPost",
+      "releaseDate": "6/12/2024",
+      "url": "https://scipost.org/SciPostPhys.16.6.152",
+      "summary": "We uncovered some exotic properties of an index-1 surface which we did not expect, by borrowing ideas from Almgren-Pitts min-max theory."
     },
     {
-      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1916-03-20",
-      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
+      "name": "Quasinormal Modes of Black Holes",
+      "publisher": "Springer",
+      "releaseDate": "10/29/2020",
+      "url": "https://link.springer.com/article/10.1007/s12045-020-1056-1",
+      "summary": "This is an introductory and accessible article on Quasinormal modes of a black hole."
+    }
+  ],
+  "projects": [
+    {
+    "name": "Tensor Network Analysis of Python’s Lunch Conjecture",
+    "summary": "Collaborated on tensor-network approaches to black-hole interior reconstruction, investigating how newly identified bulge-surface geometry affects algorithms and providing evidence for faster information extraction.",
+    "highlights": [
+      "Random-matrix–driven TN simulations",
+      "Statistical analysis of non-isometricity in TNs",
+      "Cross-team collaboration (Headrick, Lawrence, Sasieta, Swingle, Wolfe)"
+    ],
+    "startDate": "2024-01-01",
+    "endDate": "Present",
+    "url": ""
+  },
+  {
+    "name": "Geometrical Analysis of Python’s Lunch Conjecture",
+    "summary": "Analyzed time complexity for interior reconstruction and developed a mathematical framework for the bulge surface; solved PDE eigenvalue problems in multiple geometries with implications for tensor networks.",
+    "highlights": [
+      "Time-complexity analysis for reconstruction",
+      "PDE eigenvalues across geometries",
+      "Implications for tensor-network design"
+    ],
+    "startDate": "2022-11-01",
+    "endDate": "2024-01-01",
+    "url": ""
+  },
+  {
+    "name": "Entanglement Entropy in Field Theories (Bachelor’s Thesis)",
+    "summary": "Reviewed entanglement entropy in the 2D AKLT model, the replica trick for 2D CFTs, and the quantum Hall effect via Chern–Simons theory; integrated methods across lattice models and continuum field theory.",
+    "highlights": [
+      "AKLT entanglement entropy (2D)",
+      "Replica trick in 2D CFT",
+      "Quantum Hall via Chern–Simons"
+    ],
+    "startDate": "2018-07-01",
+    "endDate": "2019-05-01",
+    "url": ""
+  },
+  {
+    "name": "Supersymmetric Path Integrals and the Index Theorems",
+    "summary": "Studied 0+1D supersymmetry and superspace; rederived Gauss–Bonnet and Hirzebruch signature results; reproduced the Dirac index leading to the Atiyah–Singer index theorem; explored localization for SUSY path integrals.",
+    "highlights": [
+      "0+1D SUSY & superspace",
+      "Gauss–Bonnet & Hirzebruch signature",
+      "Atiyah–Singer via Dirac index",
+      "Localization for SUSY path integrals"
+    ],
+    "startDate": "2018-05-01",
+    "endDate": "2018-07-31",
+    "url": ""
+  },
+  {
+    "name": "Quasinormal Modes of Black Holes",
+    "summary": "Analyzed ringdown behavior using analytic methods for Schwarzschild and Reissner–Nordström black holes and extended the study to f(R) gravity; later published an accessible overview.",
+    "highlights": [
+      "Analytic QNM techniques",
+      "Schwarzschild & Reissner–Nordström",
+      "Extension to f(R) gravity"
+    ],
+    "startDate": "2017-07-01",
+    "endDate": "2017-11-30",
+    "url": "https://doi.org/10.1007/s12045-020-1056-1"
+  },
+  {
+    "name": "Cosmic Microwave Background Detection",
+    "summary": "Worked with the KUMODeS II receiver (KEK) to detect atmospheric water vapor and CMB signatures; explored adapting CMB-detection techniques for weather forecasting with Python-based analysis and modeling.",
+    "highlights": [
+      "KUMODeS II instrumentation (KEK)",
+      "CMB detection methods",
+      "Atmospheric water-vapor retrieval",
+      "Python analysis & modeling"
+    ],
+    "startDate": "2017-05-01",
+    "endDate": "2017-05-31",
+    "url": ""
+  },
+  {
+    "name": "Analysis of Dwarf Spheroidal Galaxies for Dark Matter Signal",
+    "summary": "Processed Fermi-LAT GeV data on an HPC cluster; modeled fluxes using CLUMPY J-factors and density profiles; used HEALPix masking and χ² fits to estimate NFW parameters.",
+    "highlights": [
+      "Fermi-LAT pipeline (HPC)",
+      "CLUMPY J-factors & density profiles",
+      "HEALPix masking & visualization",
+      "NFW parameter estimation"
+    ],
+    "startDate": "2017-02-01",
+    "endDate": "2017-07-31",
+    "url": ""
+  }
+  ],
+  "Recognition": [
+    {
+      "title": "Undergraduate Research Award",
+      "date": "2019",
+      "awarder": "Indian Institute of Technology Bombay",
+      "summary": "Conferred for junior year thesis titled, `Quasinormal Modes of Black Holes'"
+    },
+    {
+      "title": "Runner-up for Data Analysis Championship",
+      "date": "2018",
+      "awarder": "Indian Institute of Technology Bombay",
+      "summary": "My team and I came up with an algorithm to isolate a signal for a gravitational wave and inferred the mass of merger."
     }
   ],
   "skills": [
@@ -140,61 +176,51 @@
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "Gravity",
+        "Quantum Field Theory",
+        "Holography"
       ]
-    }
-  ],
-  "languages": [
-    {
-      "language": "German",
-      "fluency": "Native speaker",
-      "icon": ""
     },
     {
-      "language": "English",
-      "fluency": "Fluent",
-      "icon": ""
+      "name": "Mathematics",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "Probability",
+        "Statistics",
+        "Linear Algebra",
+        "PDE analysis",
+        "Differential Geometry"
+      ]
+    },
+    {
+      "name": "Computer Science",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "Machine Learning",
+        "Artifical Intelligence"
+      ]
     }
   ],
-  "interests": [
+  "volunteer": [
     {
-      "name": "Physics",
-      "icon": "fa-solid fa-tag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
+      "organization": "National Service Scheme",
+      "location": "Mumbai",
+      "position": "Teacher",
+      "startDate": "Aug 2019",
+      "endDate": "Aug 2020",
+      "summary": "I volunteered to teach computer skills to students from low-income communities, covering digital fundamentals, Microsoft Word, and Excel."
     }
   ],
   "references": [
     {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
+      "name": "Professor Matthew Headrick",
+      "icon": "fa-solid fa-laptop"
     },
     {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
-    }
-  ],
-  "projects": [
-    {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01",
-      "url": "https://example.com"
+      "name": "Professor Albion Lawrence",
+      "icon": "fa-solid fa-thumbtack"
     }
   ]
 }
