@@ -24,6 +24,13 @@ ninja.data = [{
             window.location.href = "/cv/";
           },
         },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/gurbir-a", "_blank");
+        },
+      },{
         id: 'social-linkedin',
         title: 'LinkedIn',
         section: 'Socials',
