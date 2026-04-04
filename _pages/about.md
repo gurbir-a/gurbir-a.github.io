@@ -24,7 +24,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I’m a theoretical physicist with a Ph.D. in Physics from Brandeis University. I am currently a Moore Postdoctoral Associate at Cornell University. My works involves using geometry to mechanistically interpret LLMs.
+I am a theoretical physicist with a Ph.D. in Physics from Brandeis University and am currently a Moore Postdoctoral Associate at Cornell University in the [Earls lab](https://earls.cee.cornell.edu/). My research sits at the intersection of geometry, physics, and machine learning, with a particular focus on using geometric ideas to mechanistically interpret LLMs.
 
 A big part of my Ph.D. was about understanding black holes, especially their interior. We can’t peek inside a black hole, but Hawking radiation offers a saving grace: it encodes information about the interior. My work studies interior reconstruction—how to recover interior data from exterior observations using a mix of analytical techniques and computer simulations. I built analytical tools and Python checks to verify when interior-reconstruction protocols work and how long reconstruction would take. Along the way, my collaborators and I found that the standard reconstruction protocol fails in certain spacetimes. We pointed this out in 2024, and we are finishing up work on a variant of the original Random Tensor Network that addresses the issue.
 
