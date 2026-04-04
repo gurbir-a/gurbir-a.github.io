@@ -24,15 +24,13 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I’m a physicist with a Ph.D. from Brandeis University. I build quantitative models in Python for complex systems, leveraging ideas in probability, statistics, machine learning, and numerical methods.
+I’m a theoretical physicist with a Ph.D. in Physics from Brandeis University. I am currently a Moore Postdoctoral Associate at Cornell University. My works involves using geometry to mechanistically interpret LLMs.
 
 A big part of my Ph.D. was about understanding black holes, especially their interior. We can’t peek inside a black hole, but Hawking radiation offers a saving grace: it encodes information about the interior. My work studies interior reconstruction—how to recover interior data from exterior observations using a mix of analytical techniques and computer simulations. I built analytical tools and Python checks to verify when interior-reconstruction protocols work and how long reconstruction would take. Along the way, my collaborators and I found that the standard reconstruction protocol fails in certain spacetimes. We pointed this out in 2024, and we are finishing up work on a variant of the original Random Tensor Network that addresses the issue.
 
 During undergrad at IIT Bombay, I explored a mix of problems: searching for dark-matter signatures in dwarf spheroidal galaxies with Fermi-LAT data; forecasting thunderstorms via time-series analysis of KUMODeS II measurements; studying the entanglement structure of AKLT models; and numerically analyzing the ringdown of a black hole. That last project earned me an Undergraduate Research Award, and I wrote an accessible introduction for Resonance.
 
 Off-hours, I’m grinding Destiny 2 speedruns—tweaking routes, theorycrafting, and celebrating when a PB drops. I love learning about aviation—one of my favorite activities is plane spotting. I also cook a lot of Indian food, and I bike on weekends to reset.
-
-I’m excited to bring this toolkit to markets and large-scale data problems—partnering with researchers and engineers and iterating quickly from idea to impact. You can reach out to me on LinkedIn by clicking the link at the bottom of the page.
 
 
 <!-- 
