@@ -1,9 +1,9 @@
 - title: Education
   type: time_table
   contents:
-  - title: PhD in Physics
+  - title: Ph.D. in Physics
     institution: Brandeis University, Waltham, MA
-    year: Aug''19-Dec''25
+    year: Aug''19-Feb''26
     description:
     - 'GPA: 3.95'
   - title: B.Tech in Engineering Physics
@@ -15,7 +15,7 @@
   type: time_table
   contents:
   - title: Locality and the Python's Lunch Conjecture
-    year: '2025'
+    year: '2026'
     description:
     - 'In Preparation'
   - title: Geometric Surprises in the Python's Lunch Conjecture
@@ -30,7 +30,7 @@
   type: time_table
   contents:
   - title: Tensor Network Analysis of Python’s Lunch Conjecture
-    year: Jan''24-Now
+    year: Jan''24-Dec''25
     description: Collaborated on tensor-network approaches to black-hole interior reconstruction, investigating how newly identified bulge-surface geometry affects algorithms and providing evidence for faster information extraction.
   - title: Geometrical Analysis of Python’s Lunch Conjecture
     year: Nov''22-Jan''24
