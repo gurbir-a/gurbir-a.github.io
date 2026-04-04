@@ -4,6 +4,7 @@ permalink: /cv/
 title: cv
 nav: true
 nav_order: 6
+cv_format: jsonresume
 cv_pdf: # you can also use external links here
 description:
 toc:
