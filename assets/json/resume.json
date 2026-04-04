@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Gurbir Arora",
-    "label": "Researcher",
+    "label": "AI Researcher",
     "image": "",
     "email": "",
     "phone": "",
@@ -10,9 +10,9 @@
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Boston",
+      "city": "Ithaca",
       "countryCode": "US",
-      "region": "Massachusetts"
+      "region": "New York"
     },
     "profiles": [
       {
@@ -22,15 +22,25 @@
       }
     ]
   },
+  "work": [
+    {
+      "name": "Cornell University",
+      "position": "Moore Postdoctoral Associate",
+      "location": "Ithaca, New York",
+      "startDate": "2026-04-01",
+      "endDate": "",
+      "summary": "Mechanistic interpretation of LLMs using ideas from differential geometry and theoretical physics."
+    }
+  ],
   "education": [
     {
       "institution": "Brandeis University",
       "location": "Waltham, MA",
       "url": "https://www.brandeis.edu/",
       "area": "Physics",
-      "studyType": "PhD",
+      "studyType": "Ph.D.",
       "startDate": "2019-08-01",
-      "endDate": "2025-12-01",
+      "endDate": "2026-02-01",
       "score": "3.95"
     },
     {
@@ -48,7 +58,7 @@
     {
       "name": "Locality and the Python's Lunch Conjecture",
       "publisher": "In Preparation",
-      "releaseDate": "2025",
+      "releaseDate": "2026",
       "url": "",
       "summary": ""
     },
@@ -118,7 +128,7 @@
     "name": "Tensor Network Analysis of Python’s Lunch Conjecture",
     "summary": "Collaborated on Tensor Network approaches to black-hole interior reconstruction, investigating how newly identified bulge-surface geometry affects algorithms and providing evidence for faster information extraction.",
     "startDate": "2024-01-01",
-    "endDate": "2025-07-31",
+    "endDate": "2025-12-31",
     "url": ""
   },
   {
