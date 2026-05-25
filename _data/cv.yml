@@ -14,10 +14,10 @@
 - title: Publications
   type: time_table
   contents:
-  - title: Locality and the Python's Lunch Conjecture
+  - title: Twirled Perfect Tensor Networks: Computationally covariant holographic tensor networks
     year: '2026'
-    description:
-    - 'In Preparation'
+    link: https://arxiv.org/abs/2605.23670
+    description: We define a novel class of tensor networks motivated by the Python's Lunch Conjecture in local tensor network models of the black hole interior.
   - title: Geometric Surprises in the Python's Lunch Conjecture
     year: '2024'
     link: https://scipost.org/SciPostPhys.16.6.152
