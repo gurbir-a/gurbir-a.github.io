@@ -56,11 +56,10 @@
   ],
   "publications": [
     {
-      "name": "Locality and the Python's Lunch Conjecture",
-      "publisher": "In Preparation",
+      "name": "Twirled Perfect Tensor Networks: Computationally covariant holographic tensor networks",
       "releaseDate": "2026",
-      "url": "",
-      "summary": ""
+      "url": "https://arxiv.org/abs/2605.23670",
+      "summary": "We define a novel class of tensor networks motivated by the Python's Lunch Conjecture in local tensor network models of the black hole interior."
     },
     {
       "name": "Geometric Surprises in the Python's Lunch Conjecture",
