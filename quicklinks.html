@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick Links</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --surface: #171a21;
+    --surface-2: #1f232c;
+    --border: #2a2f3a;
+    --text: #e4e7ec;
+    --muted: #8b929e;
+    --accent: #5b9dff;
+    --danger: #ff6b6b;
+    --radius: 12px;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f5f6f8;
+      --surface: #ffffff;
+      --surface-2: #eef0f4;
+      --border: #dfe2e8;
+      --text: #1a1d23;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --danger: #dc2626;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8vh 24px 64px;
+  }
+  .clock {
+    font-variant-numeric: tabular-nums;
+    font-size: clamp(2.4rem, 7vw, 4rem);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+  .date {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-top: 8px;
+    margin-bottom: 36px;
+  }
+  .search {
+    width: 100%;
+    max-width: 560px;
+    margin-bottom: 40px;
+  }
+  .search input {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 1rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .search input:focus { border-color: var(--accent); }
+  .grid {
+    width: 100%;
+    max-width: 920px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
+    gap: 14px;
+  }
+  .tile {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 12px 14px;
+    text-decoration: none;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.12s, border-color 0.12s, background 0.12s;
+    cursor: pointer;
+  }
+  .tile:hover { transform: translateY(-2px); border-color: var(--accent); background: var(--surface-2); }
+  .tile .icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    object-fit: contain;
+    background: var(--surface-2);
+  }
+  .tile .fallback {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  .tile .label {
+    font-size: 0.82rem;
+    text-align: center;
+    line-height: 1.25;
+    word-break: break-word;
+    color: var(--text);
+  }
+  .tile .menu {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    opacity: 0;
+    display: flex;
+    gap: 4px;
+    transition: opacity 0.12s;
+  }
+  .tile:hover .menu { opacity: 1; }
+  .tile .menu button {
+    width: 22px;
+    height: 22px;
+    border: none;
+    border-radius: 6px;
+    background: var(--surface-2);
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 0.72rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tile .menu button:hover { color: var(--text); }
+  .tile .menu button.del:hover { color: var(--danger); }
+  .add-tile {
+    border: 1px dashed var(--border);
+    background: transparent;
+    color: var(--muted);
+    justify-content: center;
+    font-size: 0.85rem;
+  }
+  .add-tile .plus { font-size: 1.8rem; font-weight: 200; line-height: 1; }
+  .add-tile:hover { color: var(--accent); border-color: var(--accent); transform: none; background: transparent; }
+  .empty {
+    color: var(--muted);
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 24px;
+    font-size: 0.9rem;
+  }
+  /* Modal */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 10;
+  }
+  .overlay.open { display: flex; }
+  .modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    width: 100%;
+    max-width: 380px;
+  }
+  .modal h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 18px; }
+  .field { margin-bottom: 14px; }
+  .field label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .field input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+  }
+  .field input:focus { border-color: var(--accent); }
+  .actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 8px; }
+  .actions button {
+    padding: 9px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--text);
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  .actions button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .actions button:hover { filter: brightness(1.1); }
+  .footer {
+    margin-top: 48px;
+    color: var(--muted);
+    font-size: 0.78rem;
+    display: flex;
+    gap: 16px;
+  }
+  .footer button {
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 0.78rem;
+    text-decoration: underline;
+  }
+  .footer button:hover { color: var(--text); }
+</style>
+</head>
+<body>
+  <div class="clock" id="clock">--:--</div>
+  <div class="date" id="date"></div>
+
+  <div class="search">
+    <input id="search" type="text" placeholder="Search the web…" autocomplete="off" spellcheck="false">
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="footer">
+    <button id="export">Export</button>
+    <button id="import">Import</button>
+  </div>
+
+  <!-- Add / edit modal -->
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <h2 id="modal-title">Add link</h2>
+      <div class="field">
+        <label for="f-name">Name</label>
+        <input id="f-name" type="text" placeholder="GitHub" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="f-url">URL</label>
+        <input id="f-url" type="text" placeholder="github.com" autocomplete="off">
+      </div>
+      <div class="actions">
+        <button id="cancel">Cancel</button>
+        <button id="save" class="primary">Save</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+(function () {
+  "use strict";
+
+  var STORAGE_KEY = "quicklinks.v1";
+  var SEARCH_ENGINE = "https://duckduckgo.com/?q=";
+
+  var grid = document.getElementById("grid");
+  var overlay = document.getElementById("overlay");
+  var modalTitle = document.getElementById("modal-title");
+  var fName = document.getElementById("f-name");
+  var fUrl = document.getElementById("f-url");
+  var editIndex = null;
+
+  // ---- storage ----
+  function load() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : defaults();
+    } catch (e) {
+      return defaults();
+    }
+  }
+  function save(links) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(links)); }
+    catch (e) { /* storage blocked (e.g. preview sandbox) — runtime only */ }
+  }
+  function defaults() {
+    return [
+      { name: "Gmail", url: "https://mail.google.com" },
+      { name: "Calendar", url: "https://calendar.google.com" },
+      { name: "GitHub", url: "https://github.com" },
+      { name: "YouTube", url: "https://youtube.com" }
+    ];
+  }
+
+  var links = load();
+
+  // ---- helpers ----
+  function normalizeUrl(u) {
+    u = u.trim();
+    if (!u) return "";
+    if (!/^https?:\/\//i.test(u)) u = "https://" + u;
+    return u;
+  }
+  function hostOf(u) {
+    try { return new URL(u).hostname; } catch (e) { return ""; }
+  }
+  function faviconUrl(u) {
+    var host = hostOf(u);
+    if (!host) return "";
+    // Google's favicon service; falls back to a letter tile on error.
+    return "https://www.google.com/s2/favicons?domain=" + host + "&sz=64";
+  }
+
+  // ---- render ----
+  function render() {
+    grid.innerHTML = "";
+
+    links.forEach(function (link, i) {
+      var a = document.createElement("a");
+      a.className = "tile";
+      a.href = link.url;
+
+      var fav = faviconUrl(link.url);
+      if (fav) {
+        var img = document.createElement("img");
+        img.className = "icon";
+        img.alt = "";
+        img.src = fav;
+        img.onerror = function () {
+          var fb = document.createElement("div");
+          fb.className = "fallback";
+          fb.textContent = (link.name || "?").charAt(0).toUpperCase();
+          img.replaceWith(fb);
+        };
+        a.appendChild(img);
+      } else {
+        var fb = document.createElement("div");
+        fb.className = "fallback";
+        fb.textContent = (link.name || "?").charAt(0).toUpperCase();
+        a.appendChild(fb);
+      }
+
+      var label = document.createElement("div");
+      label.className = "label";
+      label.textContent = link.name;
+      a.appendChild(label);
+
+      var menu = document.createElement("div");
+      menu.className = "menu";
+
+      var edit = document.createElement("button");
+      edit.textContent = "✎";
+      edit.title = "Edit";
+      edit.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        openModal(i);
+      };
+
+      var del = document.createElement("button");
+      del.className = "del";
+      del.textContent = "✕";
+      del.title = "Remove";
+      del.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        links.splice(i, 1);
+        save(links);
+        render();
+      };
+
+      menu.appendChild(edit);
+      menu.appendChild(del);
+      a.appendChild(menu);
+      grid.appendChild(a);
+    });
+
+    // add button
+    var add = document.createElement("button");
+    add.className = "tile add-tile";
+    add.innerHTML = '<span class="plus">+</span><span class="label">Add link</span>';
+    add.onclick = function () { openModal(null); };
+    grid.appendChild(add);
+  }
+
+  // ---- modal ----
+  function openModal(index) {
+    editIndex = index;
+    if (index === null) {
+      modalTitle.textContent = "Add link";
+      fName.value = "";
+      fUrl.value = "";
+    } else {
+      modalTitle.textContent = "Edit link";
+      fName.value = links[index].name;
+      fUrl.value = links[index].url;
+    }
+    overlay.classList.add("open");
+    fName.focus();
+  }
+  function closeModal() {
+    overlay.classList.remove("open");
+    editIndex = null;
+  }
+  function saveModal() {
+    var name = fName.value.trim();
+    var url = normalizeUrl(fUrl.value);
+    if (!url) { fUrl.focus(); return; }
+    if (!name) name = hostOf(url) || url;
+
+    var entry = { name: name, url: url };
+    if (editIndex === null) links.push(entry);
+    else links[editIndex] = entry;
+
+    save(links);
+    render();
+    closeModal();
+  }
+
+  document.getElementById("save").onclick = saveModal;
+  document.getElementById("cancel").onclick = closeModal;
+  overlay.onclick = function (e) { if (e.target === overlay) closeModal(); };
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && overlay.classList.contains("open")) closeModal();
+    if (e.key === "Enter" && overlay.classList.contains("open")) saveModal();
+  });
+
+  // ---- search ----
+  var search = document.getElementById("search");
+  search.addEventListener("keydown", function (e) {
+    if (e.key !== "Enter") return;
+    var q = search.value.trim();
+    if (!q) return;
+    // If it looks like a URL, go straight there; else search.
+    if (/^[\w-]+(\.[\w-]+)+(\/.*)?$/.test(q) || /^https?:\/\//i.test(q)) {
+      window.location.href = normalizeUrl(q);
+    } else {
+      window.location.href = SEARCH_ENGINE + encodeURIComponent(q);
+    }
+  });
+
+  // ---- export / import ----
+  document.getElementById("export").onclick = function () {
+    var blob = new Blob([JSON.stringify(links, null, 2)], { type: "application/json" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "quicklinks.json";
+    a.click();
+    URL.revokeObjectURL(a.href);
+  };
+  document.getElementById("import").onclick = function () {
+    var input = document.createElement("input");
+    input.type = "file";
+    input.accept = "application/json,.json";
+    input.onchange = function () {
+      var file = input.files[0];
+      if (!file) return;
+      var reader = new FileReader();
+      reader.onload = function () {
+        try {
+          var data = JSON.parse(reader.result);
+          if (Array.isArray(data)) {
+            links = data.filter(function (x) { return x && x.url; });
+            save(links);
+            render();
+          }
+        } catch (e) { alert("That file isn't valid quick-links JSON."); }
+      };
+      reader.readAsText(file);
+    };
+    input.click();
+  };
+
+  // ---- clock ----
+  function tick() {
+    var now = new Date();
+    var h = now.getHours();
+    var m = now.getMinutes();
+    document.getElementById("clock").textContent =
+      (h < 10 ? "0" + h : h) + ":" + (m < 10 ? "0" + m : m);
+    document.getElementById("date").textContent =
+      now.toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" });
+  }
+  tick();
+  setInterval(tick, 1000 * 15);
+
+  render();
+})();
+</script>
+</body>
+</html>
