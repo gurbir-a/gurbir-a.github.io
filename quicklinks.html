@@ -325,6 +325,7 @@
       var a = document.createElement("a");
       a.className = "tile";
       a.href = link.url;
+      a.target = "_top";   // open in the full tab, not inside the extension's iframe
 
       var fav = faviconUrl(link.url);
       if (fav) {
@@ -432,6 +433,16 @@
   });
 
   // ---- search ----
+  // Navigate the top-level tab, not the extension's iframe. Setting a
+  // cross-origin top location is permitted (reading it is not), so this
+  // works inside Custom New Tab Page's iframe and also when not framed.
+  function go(url) {
+    try {
+      if (window.top !== window.self) { window.top.location.href = url; return; }
+    } catch (e) { /* fall through */ }
+    window.location.href = url;
+  }
+
   var search = document.getElementById("search");
   search.addEventListener("keydown", function (e) {
     if (e.key !== "Enter") return;
@@ -439,10 +450,28 @@
     if (!q) return;
     // If it looks like a URL, go straight there; else search.
     if (/^[\w-]+(\.[\w-]+)+(\/.*)?$/.test(q) || /^https?:\/\//i.test(q)) {
-      window.location.href = normalizeUrl(q);
+      go(normalizeUrl(q));
     } else {
-      window.location.href = SEARCH_ENGINE + encodeURIComponent(q);
+      go(SEARCH_ENGINE + encodeURIComponent(q));
     }
+  });
+
+  // Focus the search box on load so "open tab, start typing" works
+  // (only effective when the page itself has focus — e.g. New Tab Override
+  //  with its Focus option set to the web page).
+  search.focus();
+
+  // Catch stray keystrokes: if the user starts typing while nothing is
+  // focused, redirect the input into the search box instead of losing it.
+  document.addEventListener("keydown", function (e) {
+    if (overlay.classList.contains("open")) return;      // modal handles its own keys
+    if (e.ctrlKey || e.metaKey || e.altKey) return;      // let shortcuts through
+    if (e.key.length !== 1) return;                       // ignore Enter, Tab, arrows, etc.
+    var el = document.activeElement;
+    if (el === search) return;                            // already typing in the box
+    var typingElsewhere = el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA");
+    if (typingElsewhere) return;
+    search.focus();                                       // pull focus; the char lands here
   });
 
   // ---- export / import ----
