@@ -87,6 +87,37 @@
     grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
     gap: 14px;
   }
+  .scratch {
+    width: 100%;
+    max-width: 920px;
+    margin-top: 32px;
+  }
+  .scratch-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .scratch-status { font-size: 0.72rem; opacity: 0; transition: opacity 0.2s; }
+  .scratch-status.show { opacity: 1; }
+  .scratch textarea {
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+    padding: 14px 16px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .scratch textarea:focus { border-color: var(--accent); }
   .tile {
     position: relative;
     background: var(--surface);
@@ -103,6 +134,8 @@
     cursor: pointer;
   }
   .tile:hover { transform: translateY(-2px); border-color: var(--accent); background: var(--surface-2); }
+  .tile.dragging { opacity: 0.4; }
+  .tile.drop-target { border-color: var(--accent); border-style: dashed; transform: none; }
   .tile .icon {
     width: 36px;
     height: 36px;
@@ -249,6 +282,14 @@
 
   <div class="grid" id="grid"></div>
 
+  <div class="scratch">
+    <div class="scratch-head">
+      <span>Scratchpad</span>
+      <span class="scratch-status" id="scratch-status"></span>
+    </div>
+    <textarea id="scratch" placeholder="Notes, reminders, anything — saved automatically on this device." spellcheck="false"></textarea>
+  </div>
+
   <div class="footer">
     <button id="export">Export</button>
     <button id="import">Import</button>
@@ -279,6 +320,7 @@
 
   var STORAGE_KEY = "quicklinks.v1";
   var WEATHER_KEY = "quicklinks.weather.v1";
+  var SCRATCH_KEY = "quicklinks.scratch.v1";
 
   var grid = document.getElementById("grid");
   var overlay = document.getElementById("overlay");
@@ -337,6 +379,13 @@
       a.className = "tile";
       a.href = link.url;
       a.target = "_top";   // open in the full tab, not inside the extension's iframe
+      a.draggable = true;
+      a.dataset.index = i;
+      a.addEventListener("dragstart", onDragStart);
+      a.addEventListener("dragover", onDragOver);
+      a.addEventListener("dragleave", onDragLeave);
+      a.addEventListener("drop", onDrop);
+      a.addEventListener("dragend", onDragEnd);
 
       var fav = faviconUrl(link.url);
       if (fav) {
@@ -393,12 +442,54 @@
       grid.appendChild(a);
     });
 
-    // add button
+    // add button (also a drop target: dropping here moves a tile to the end)
     var add = document.createElement("button");
     add.className = "tile add-tile";
+    add.dataset.index = links.length;
     add.innerHTML = '<span class="plus">+</span><span class="label">Add link</span>';
     add.onclick = function () { openModal(null); };
+    add.addEventListener("dragover", onDragOver);
+    add.addEventListener("dragleave", onDragLeave);
+    add.addEventListener("drop", onDrop);
     grid.appendChild(add);
+  }
+
+  // ---- drag to reorder ----
+  var dragSrc = null;
+  function onDragStart(e) {
+    dragSrc = Number(this.dataset.index);
+    this.classList.add("dragging");
+    if (e.dataTransfer) {
+      e.dataTransfer.effectAllowed = "move";
+      try { e.dataTransfer.setData("text/plain", String(dragSrc)); } catch (_) {}
+    }
+  }
+  function onDragOver(e) {
+    e.preventDefault();                 // required to allow a drop
+    if (e.dataTransfer) e.dataTransfer.dropEffect = "move";
+    this.classList.add("drop-target");
+  }
+  function onDragLeave() {
+    this.classList.remove("drop-target");
+  }
+  function onDrop(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.classList.remove("drop-target");
+    if (dragSrc === null) return;
+    var target = Number(this.dataset.index);
+    if (isNaN(target) || target === dragSrc) return;
+    var item = links.splice(dragSrc, 1)[0];
+    links.splice(target > dragSrc ? target - 1 : target, 0, item);
+    save(links);
+    render();
+  }
+  function onDragEnd() {
+    dragSrc = null;
+    Array.prototype.forEach.call(
+      document.querySelectorAll(".tile"),
+      function (t) { t.classList.remove("dragging", "drop-target"); }
+    );
   }
 
   // ---- modal ----
@@ -596,6 +687,21 @@
   renderWeather();
   // Refresh weather every 15 minutes.
   setInterval(renderWeather, 1000 * 60 * 15);
+
+  // ---- scratchpad ----
+  var scratch = document.getElementById("scratch");
+  var scratchStatus = document.getElementById("scratch-status");
+  try { scratch.value = localStorage.getItem(SCRATCH_KEY) || ""; } catch (e) {}
+  var scratchTimer = null;
+  scratch.addEventListener("input", function () {
+    try { localStorage.setItem(SCRATCH_KEY, scratch.value); } catch (e) {}
+    scratchStatus.textContent = "Saved";
+    scratchStatus.classList.add("show");
+    clearTimeout(scratchTimer);
+    scratchTimer = setTimeout(function () {
+      scratchStatus.classList.remove("show");
+    }, 1200);
+  });
 
   render();
 })();
