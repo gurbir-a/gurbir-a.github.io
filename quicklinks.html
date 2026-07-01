@@ -52,23 +52,34 @@
     margin-top: 8px;
     margin-bottom: 36px;
   }
-  .search {
-    width: 100%;
-    max-width: 560px;
-    margin-bottom: 40px;
-  }
-  .search input {
-    width: 100%;
-    padding: 14px 18px;
-    font-size: 1rem;
-    color: var(--text);
+  .weather {
+    position: fixed;
+    top: 16px;
+    right: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 999px;
-    outline: none;
-    transition: border-color 0.15s;
+    color: var(--text);
+    font-size: 0.9rem;
+    cursor: pointer;
+    user-select: none;
+    transition: border-color 0.12s, background 0.12s;
+    z-index: 5;
   }
-  .search input:focus { border-color: var(--accent); }
+  .weather:hover { border-color: var(--accent); background: var(--surface-2); }
+  .weather .w-icon { font-size: 1.25rem; line-height: 1; }
+  .weather .w-temp { font-variant-numeric: tabular-nums; font-weight: 500; }
+  .weather .w-temp:hover { text-decoration: underline dotted; text-underline-offset: 3px; }
+  .weather .w-place { color: var(--muted); font-size: 0.8rem; }
+  .weather .w-loading, .weather .w-set { color: var(--muted); font-size: 0.85rem; }
+  @media (max-width: 480px) {
+    .weather { top: 10px; right: 10px; padding: 6px 10px; font-size: 0.82rem; }
+    .weather .w-place { display: none; }
+  }
   .grid {
     width: 100%;
     max-width: 920px;
@@ -229,12 +240,12 @@
 </style>
 </head>
 <body>
+  <div class="weather" id="weather" title="Click to set your city">
+    <span class="w-loading">…</span>
+  </div>
+
   <div class="clock" id="clock">--:--</div>
   <div class="date" id="date"></div>
-
-  <div class="search">
-    <input id="search" type="text" placeholder="Search the web…" autocomplete="off" spellcheck="false">
-  </div>
 
   <div class="grid" id="grid"></div>
 
@@ -267,7 +278,7 @@
   "use strict";
 
   var STORAGE_KEY = "quicklinks.v1";
-  var SEARCH_ENGINE = "https://duckduckgo.com/?q=";
+  var WEATHER_KEY = "quicklinks.weather.v1";
 
   var grid = document.getElementById("grid");
   var overlay = document.getElementById("overlay");
@@ -432,48 +443,6 @@
     if (e.key === "Enter" && overlay.classList.contains("open")) saveModal();
   });
 
-  // ---- search ----
-  // Navigate the top-level tab, not the extension's iframe. Setting a
-  // cross-origin top location is permitted (reading it is not), so this
-  // works inside Custom New Tab Page's iframe and also when not framed.
-  function go(url) {
-    try {
-      if (window.top !== window.self) { window.top.location.href = url; return; }
-    } catch (e) { /* fall through */ }
-    window.location.href = url;
-  }
-
-  var search = document.getElementById("search");
-  search.addEventListener("keydown", function (e) {
-    if (e.key !== "Enter") return;
-    var q = search.value.trim();
-    if (!q) return;
-    // If it looks like a URL, go straight there; else search.
-    if (/^[\w-]+(\.[\w-]+)+(\/.*)?$/.test(q) || /^https?:\/\//i.test(q)) {
-      go(normalizeUrl(q));
-    } else {
-      go(SEARCH_ENGINE + encodeURIComponent(q));
-    }
-  });
-
-  // Focus the search box on load so "open tab, start typing" works
-  // (only effective when the page itself has focus — e.g. New Tab Override
-  //  with its Focus option set to the web page).
-  search.focus();
-
-  // Catch stray keystrokes: if the user starts typing while nothing is
-  // focused, redirect the input into the search box instead of losing it.
-  document.addEventListener("keydown", function (e) {
-    if (overlay.classList.contains("open")) return;      // modal handles its own keys
-    if (e.ctrlKey || e.metaKey || e.altKey) return;      // let shortcuts through
-    if (e.key.length !== 1) return;                       // ignore Enter, Tab, arrows, etc.
-    var el = document.activeElement;
-    if (el === search) return;                            // already typing in the box
-    var typingElsewhere = el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA");
-    if (typingElsewhere) return;
-    search.focus();                                       // pull focus; the char lands here
-  });
-
   // ---- export / import ----
   document.getElementById("export").onclick = function () {
     var blob = new Blob([JSON.stringify(links, null, 2)], { type: "application/json" });
@@ -518,6 +487,115 @@
   }
   tick();
   setInterval(tick, 1000 * 15);
+
+  // ---- weather (Open-Meteo, no API key required) ----
+  var weatherEl = document.getElementById("weather");
+
+  function loadWeatherPref() {
+    try {
+      var raw = localStorage.getItem(WEATHER_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; }
+  }
+  function saveWeatherPref(p) {
+    try { localStorage.setItem(WEATHER_KEY, JSON.stringify(p)); } catch (e) {}
+  }
+
+  // Map WMO weather codes to an icon + short label.
+  function wmoInfo(code) {
+    var m = {
+      0:  ["☀️", "Clear"],
+      1:  ["🌤️", "Mainly clear"],
+      2:  ["⛅", "Partly cloudy"],
+      3:  ["☁️", "Overcast"],
+      45: ["🌫️", "Fog"],       48: ["🌫️", "Rime fog"],
+      51: ["🌦️", "Light drizzle"], 53: ["🌦️", "Drizzle"], 55: ["🌦️", "Heavy drizzle"],
+      56: ["🌧️", "Freezing drizzle"], 57: ["🌧️", "Freezing drizzle"],
+      61: ["🌧️", "Light rain"], 63: ["🌧️", "Rain"], 65: ["🌧️", "Heavy rain"],
+      66: ["🌧️", "Freezing rain"], 67: ["🌧️", "Freezing rain"],
+      71: ["🌨️", "Light snow"], 73: ["🌨️", "Snow"], 75: ["🌨️", "Heavy snow"],
+      77: ["🌨️", "Snow grains"],
+      80: ["🌦️", "Light showers"], 81: ["🌦️", "Showers"], 82: ["🌦️", "Heavy showers"],
+      85: ["🌨️", "Snow showers"], 86: ["🌨️", "Snow showers"],
+      95: ["⛈️", "Thunderstorm"], 96: ["⛈️", "Thunderstorm"], 99: ["⛈️", "Thunderstorm, hail"]
+    };
+    return m[code] || ["🌡️", "—"];
+  }
+
+  function showWeatherState(html) { weatherEl.innerHTML = html; }
+
+  function renderWeather() {
+    var pref = loadWeatherPref();
+    if (!pref) {
+      showWeatherState('<span class="w-set">Set location</span>');
+      weatherEl.title = "Click to set your city";
+      return;
+    }
+    showWeatherState('<span class="w-loading">Loading…</span>');
+    var unit = pref.unit === "c" ? "celsius" : "fahrenheit";
+    var deg = pref.unit === "c" ? "°C" : "°F";
+    var url = "https://api.open-meteo.com/v1/forecast?latitude=" + pref.lat +
+              "&longitude=" + pref.lon + "&current=temperature_2m,weather_code" +
+              "&temperature_unit=" + unit;
+    fetch(url)
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d || !d.current) throw new Error("no data");
+        var t = Math.round(d.current.temperature_2m);
+        var info = wmoInfo(d.current.weather_code);
+        weatherEl.innerHTML =
+          '<span class="w-icon">' + info[0] + '</span>' +
+          '<span class="w-temp">' + t + deg + '</span>' +
+          '<span class="w-place">' + (pref.name || "") + '</span>';
+        weatherEl.title = info[1] + " · click the temperature to toggle °C/°F · click the city to change it";
+      })
+      .catch(function () {
+        showWeatherState('<span class="w-set">Weather unavailable — retry</span>');
+      });
+  }
+
+  function setCity() {
+    var input = prompt("Enter your city (e.g. Ithaca or London, UK):");
+    if (!input) return;
+    var geo = "https://geocoding-api.open-meteo.com/v1/search?count=1&language=en&format=json&name=" +
+              encodeURIComponent(input.trim());
+    showWeatherState('<span class="w-loading">Finding…</span>');
+    fetch(geo)
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d.results || !d.results.length) {
+          alert("Couldn't find that city. Try adding a country, e.g. 'Paris, FR'.");
+          renderWeather();
+          return;
+        }
+        var g = d.results[0];
+        var label = g.name + (g.admin1 ? ", " + g.admin1 : (g.country_code ? ", " + g.country_code : ""));
+        var prev = loadWeatherPref() || {};
+        saveWeatherPref({ lat: g.latitude, lon: g.longitude, name: label, unit: prev.unit || "f" });
+        renderWeather();
+      })
+      .catch(function () {
+        alert("Location lookup failed. Check your connection and try again.");
+        renderWeather();
+      });
+  }
+
+  function toggleUnit() {
+    var pref = loadWeatherPref();
+    if (!pref) return;
+    pref.unit = pref.unit === "c" ? "f" : "c";
+    saveWeatherPref(pref);
+    renderWeather();
+  }
+
+  weatherEl.addEventListener("click", function (e) {
+    if (e.target.classList.contains("w-temp")) toggleUnit();
+    else setCity();
+  });
+
+  renderWeather();
+  // Refresh weather every 15 minutes.
+  setInterval(renderWeather, 1000 * 60 * 15);
 
   render();
 })();
