@@ -56,6 +56,18 @@
   ],
   "publications": [
     {
+      "name": "A Graph Signal Processing Perspective on Numerical Sequence Representations in LLM In-Context Learning",
+      "releaseDate": "2026",
+      "url": "https://arxiv.org/abs/2608.03015",
+      "summary": ""
+    },
+    {
+      "name": "Jacobian Scopes: token-level causal attributions in LLMs",
+      "releaseDate": "2026",
+      "url": "https://arxiv.org/abs/2601.16407",
+      "summary": ""
+    },
+    {
       "name": "Twirled Perfect Tensor Networks: Computationally covariant holographic tensor networks",
       "releaseDate": "2026",
       "url": "https://arxiv.org/abs/2605.23670",
