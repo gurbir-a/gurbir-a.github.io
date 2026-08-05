@@ -14,6 +14,14 @@
 - title: Publications
   type: time_table
   contents:
+  - title: 'A Graph Signal Processing Perspective on Numerical Sequence Representations in LLM In-Context Learning'
+    year: '2026'
+    link: https://arxiv.org/abs/2608.03015
+    description:
+  - title: 'Jacobian Scopes: token-level causal attributions in LLMs'
+    year: '2026'
+    link: https://arxiv.org/abs/2601.16407
+    description:
   - title: 'Twirled Perfect Tensor Networks: Computationally covariant holographic tensor networks'
     year: '2026'
     link: https://arxiv.org/abs/2605.23670
