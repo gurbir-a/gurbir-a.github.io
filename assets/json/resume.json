@@ -56,6 +56,18 @@
   ],
   "publications": [
     {
+      "name": "Causal and Interpretable Structures in LLM Compositional Tasks",
+      "releaseDate": "2026",
+      "url": "https://arxiv.org/abs/2609.35970",
+      "summary": ""
+    },
+    {
+      "name": "The Geometry of Ignorance: LLMs Know When to Temper Bayesian Priors",
+      "releaseDate": "2026",
+      "url": "https://arxiv.org/abs/2609.02959",
+      "summary": ""
+    },
+    {
       "name": "A Graph Signal Processing Perspective on Numerical Sequence Representations in LLM In-Context Learning",
       "releaseDate": "2026",
       "url": "https://arxiv.org/abs/2608.03015",
