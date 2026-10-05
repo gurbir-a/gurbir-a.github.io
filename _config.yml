@@ -283,8 +283,11 @@ scholar:
   details_link: Details
 
   query: "@*"
-  group_by: year
-  group_order: descending
+  # Latest arXiv version submission date, including revisions (YYYY-MM-DD).
+  # Entries without an arXiv date sort last; do not group by publication year.
+  sort_by: arxiv_updated
+  order: descending
+  group_by: none
 
 # Display different badges withs stats for your publications
 # Customize badge behavior in _layouts/bib.liquid
@@ -303,6 +306,7 @@ filtered_bibtex_keywords:
     altmetric,
     annotation,
     arxiv,
+    arxiv_updated,
     award,
     award_name,
     bibtex_show,
