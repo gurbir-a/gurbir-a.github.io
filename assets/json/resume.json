@@ -57,30 +57,35 @@
   "publications": [
     {
       "name": "Causal and Interpretable Structures in LLM Compositional Tasks",
+      "publisher": "Under review",
       "releaseDate": "2026",
       "url": "https://arxiv.org/abs/2609.35970",
       "summary": ""
     },
     {
       "name": "The Geometry of Ignorance: LLMs Know When to Temper Bayesian Priors",
+      "publisher": "Under review",
       "releaseDate": "2026",
       "url": "https://arxiv.org/abs/2609.02959",
       "summary": ""
     },
     {
       "name": "A Graph Signal Processing Perspective on Numerical Sequence Representations in LLM In-Context Learning",
+      "publisher": "Under review",
       "releaseDate": "2026",
       "url": "https://arxiv.org/abs/2608.03015",
       "summary": ""
     },
     {
       "name": "Jacobian Scopes: token-level causal attributions in LLMs",
+      "publisher": "NeurIPS 2026",
       "releaseDate": "2026",
       "url": "https://arxiv.org/abs/2601.16407",
       "summary": ""
     },
     {
       "name": "Twirled Perfect Tensor Networks: Computationally covariant holographic tensor networks",
+      "publisher": "Under review",
       "releaseDate": "2026",
       "url": "https://arxiv.org/abs/2605.23670",
       "summary": "We define a novel class of tensor networks motivated by the Python's Lunch Conjecture in local tensor network models of the black hole interior."
