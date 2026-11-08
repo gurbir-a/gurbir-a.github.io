@@ -1425,74 +1425,89 @@ figure.cover {
 }
 
 
-// Compact, keyboard-accessible publication citations.
+// Match the approved citation preview without inheriting MDB button styles.
 .publications .citation-popup {
-  display: inline-block;
-  position: relative;
+  display: block;
+  margin-top: 0.5rem;
+  max-width: 650px;
 
-  summary {
+  .citation-trigger {
+    display: inline-block;
     list-style: none;
     cursor: pointer;
+    color: var(--global-text-color);
+    background: var(--global-bg-color);
+    border: 1px solid var(--global-text-color);
+    border-radius: 4px;
+    padding: 5px 14px;
+    font: inherit;
+    text-transform: none;
+    margin: 0;
+
     &::-webkit-details-marker { display: none; }
+    &:hover { border-color: var(--global-theme-color); }
   }
 
   .citation-panel {
-    position: absolute;
-    z-index: 20;
-    left: 0;
-    top: 100%;
-    width: min(540px, 70vw);
-    max-width: calc(100vw - 3rem);
-    padding: 1rem;
-    background: var(--global-bg-color);
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 18px;
+    padding: 18px;
+    background: var(--global-code-bg-color);
     color: var(--global-text-color);
     border: 1px solid var(--global-divider-color);
-    border-radius: 6px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 7px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   }
 
   .citation-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 0.75rem;
+    gap: 12px;
+    margin-bottom: 12px;
   }
 
   .citation-close, .citation-copy {
-    background: var(--global-bg-color);
     color: var(--global-text-color);
+    background: var(--global-bg-color);
+    font: inherit;
     cursor: pointer;
   }
 
   .citation-close {
-    border: 0;
-    padding: 0.25rem 0.5rem;
-    font-size: 1.25rem;
+    border: 1px solid var(--global-text-color);
+    border-radius: 4px;
+    padding: 5px 14px;
   }
 
   .citation-copy {
     display: block;
+    box-sizing: border-box;
     width: 100%;
     text-align: left;
-    padding: 0.75rem;
+    padding: 14px;
     border: 1px solid var(--global-divider-color);
     border-radius: 4px;
   }
 
-  .citation-text {
+  pre.citation-text, pre.citation-text code {
     display: block;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    color: inherit;
+    font: 12px/1.6 monospace;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
-    color: inherit;
-    font-size: 0.8rem;
-    max-height: 18rem;
-    overflow-y: auto;
+    overflow: visible;
   }
 
   .citation-status {
     display: block;
-    margin-top: 0.75rem;
+    margin-top: 12px;
     color: var(--global-theme-color);
   }
 }
