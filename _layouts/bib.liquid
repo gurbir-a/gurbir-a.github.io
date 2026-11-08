@@ -207,14 +207,14 @@
         <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button">arXiv</a>
       {% endif %}
       <details class="citation-popup">
-        <summary class="btn btn-sm z-depth-0">Cite</summary>
+        <summary class="citation-trigger">Cite</summary>
         <div class="citation-panel">
           <div class="citation-header">
             <strong>Cite this paper</strong>
             <button type="button" class="citation-close" aria-label="Close citation popup">&times;</button>
           </div>
           <button type="button" class="citation-copy" aria-label="Copy BibTeX citation for {{ entry.title | strip_html | escape }}">
-            <code class="citation-text">{{ entry.bibtex | hideCustomBibtex | strip | escape }}</code>
+            <pre class="citation-text"><code>{{ entry.bibtex | hideCustomBibtex | strip | escape }}</code></pre>
             <span class="citation-status" aria-live="polite">Click to copy BibTeX</span>
           </button>
         </div>
