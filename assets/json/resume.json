@@ -57,27 +57,27 @@
   "publications": [
     {
       "name": "Causal and Interpretable Structures in LLM Compositional Tasks",
-      "publisher": "Under review",
+      "publisher": "arXiv",
       "releaseDate": "2026",
       "url": "https://arxiv.org/abs/2609.35970",
       "summary": ""
     },
     {
-      "name": "The Geometry of Ignorance: LLMs Know When to Temper Bayesian Priors",
-      "publisher": "Under review",
+      "name": "The Direction of Ignorance: LLMs Encode and Temper a Unigram Prior",
+      "publisher": "arXiv",
       "releaseDate": "2026",
       "url": "https://arxiv.org/abs/2609.02959",
       "summary": ""
     },
     {
       "name": "A Graph Signal Processing Perspective on Numerical Sequence Representations in LLM In-Context Learning",
-      "publisher": "Under review",
+      "publisher": "arXiv",
       "releaseDate": "2026",
       "url": "https://arxiv.org/abs/2608.03015",
       "summary": ""
     },
     {
-      "name": "Jacobian Scopes: token-level causal attributions in LLMs",
+      "name": "Jacobian Scopes: A Unified Geometric Framework for Token-Level LLM Attribution",
       "publisher": "NeurIPS 2026",
       "releaseDate": "2026",
       "url": "https://arxiv.org/abs/2601.16407",
@@ -85,20 +85,20 @@
     },
     {
       "name": "Twirled Perfect Tensor Networks: Computationally covariant holographic tensor networks",
-      "publisher": "Under review",
+      "publisher": "arXiv",
       "releaseDate": "2026",
       "url": "https://arxiv.org/abs/2605.23670",
       "summary": "We define a novel class of tensor networks motivated by the Python's Lunch Conjecture in local tensor network models of the black hole interior."
     },
     {
-      "name": "Geometric Surprises in the Python's Lunch Conjecture",
+      "name": "Geometric surprises in the Python's lunch conjecture",
       "publisher": "SciPost",
       "releaseDate": "2024-06-12",
       "url": "https://scipost.org/SciPostPhys.16.6.152",
       "summary": "We uncovered some exotic properties of an index-1 surface which we did not expect, by borrowing ideas from Almgren-Pitts min-max theory."
     },
     {
-      "name": "Quasinormal Modes of Black Holes",
+      "name": "Quasinormal Modes of Black Holes: Small Perturbations of Black Holes",
       "publisher": "Springer",
       "releaseDate": "2020-10-29",
       "url": "https://link.springer.com/article/10.1007/s12045-020-1056-1",

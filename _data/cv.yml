@@ -17,14 +17,14 @@
   - title: 'Causal and Interpretable Structures in LLM Compositional Tasks'
     year: '2026'
     link: https://arxiv.org/abs/2609.35970
-  - title: 'The Geometry of Ignorance: LLMs Know When to Temper Bayesian Priors'
+  - title: 'The Direction of Ignorance: LLMs Encode and Temper a Unigram Prior'
     year: '2026'
     link: https://arxiv.org/abs/2609.02959
   - title: 'A Graph Signal Processing Perspective on Numerical Sequence Representations in LLM In-Context Learning'
     year: '2026'
     link: https://arxiv.org/abs/2608.03015
     description:
-  - title: 'Jacobian Scopes: token-level causal attributions in LLMs'
+  - title: 'Jacobian Scopes: A Unified Geometric Framework for Token-Level LLM Attribution'
     year: '2026'
     link: https://arxiv.org/abs/2601.16407
     description:
@@ -32,11 +32,11 @@
     year: '2026'
     link: https://arxiv.org/abs/2605.23670
     description: We define a novel class of tensor networks motivated by the Python's Lunch Conjecture in local tensor network models of the black hole interior.
-  - title: Geometric Surprises in the Python's Lunch Conjecture
+  - title: Geometric surprises in the Python's lunch conjecture
     year: '2024'
     link: https://scipost.org/SciPostPhys.16.6.152
     description: We uncovered some exotic properties of an index-1 surface which we did not expect, by borrowing ideas from Almgren-Pitts min-max theory.
-  - title: Quasinormal Modes of Black Holes
+  - title: 'Quasinormal Modes of Black Holes: Small Perturbations of Black Holes'
     year: '2020'
     link: https://link.springer.com/article/10.1007/s12045-020-1056-1
     description: This is an introductory and accessible article on Quasinormal modes of a black hole.
