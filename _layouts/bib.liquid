@@ -166,10 +166,12 @@
     {% else %}
       {% capture entrytype %}{% endcapture %}
     {% endif %}
+    {% assign entrymonth = "" %}
+    {% assign entryyear = "" %}
     {% if entry.month %}
       {% capture entrymonth %}{{ " " }}{{ entry.month | capitalize }}{% endcapture %}
     {% endif %}
-    {% if entry.year %}
+    {% if entry.year and entry.key != 'liu2026jacobianscopestokenlevelcausal' %}
       {% capture entryyear %}{{ " " }}{{ entry.year }}{% endcapture %}
     {% endif %}
     {% if entry.location %}
@@ -201,15 +203,22 @@
       {% if entry.abstract %}
         <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
       {% endif %}
-      {% if entry.doi %}
-        <a href="https://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0" role="button">DOI</a>
-      {% endif %}
       {% if entry.arxiv %}
         <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button">arXiv</a>
       {% endif %}
-      {% if entry.bibtex_show %}
-        <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
-      {% endif %}
+      <details class="citation-popup">
+        <summary class="btn btn-sm z-depth-0">Cite</summary>
+        <div class="citation-panel">
+          <div class="citation-header">
+            <strong>Cite this paper</strong>
+            <button type="button" class="citation-close" aria-label="Close citation popup">&times;</button>
+          </div>
+          <button type="button" class="citation-copy" aria-label="Copy BibTeX citation for {{ entry.title | strip_html | escape }}">
+            <code class="citation-text">{{ entry.bibtex | hideCustomBibtex | strip | escape }}</code>
+            <span class="citation-status" aria-live="polite">Click to copy BibTeX</span>
+          </button>
+        </div>
+      </details>
       {% if entry.html %}
         {% if entry.html contains '://' %}
           <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button">HTML</a>
@@ -359,15 +368,6 @@
       </div>
     {% endif %}
 
-    {% if entry.bibtex_show %}
-      <!-- Hidden bibtex block -->
-      <div class="bibtex hidden">
-        {% highlight bibtex %}
-        {{- entry.bibtex | hideCustomBibtex -}}
-        {% endhighlight %}
-      </div>
-    {% endif %}
-
     {% if entry.video and site.enable_video_embedding %}
       <!-- Hidden video block -->
       <div class="abstract hidden">
@@ -376,3 +376,4 @@
     {% endif %}
   </div>
 </div>
+
