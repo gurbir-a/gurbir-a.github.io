@@ -283,10 +283,9 @@ scholar:
   details_link: Details
 
   query: "@*"
-  # Latest arXiv version submission date, including revisions (YYYY-MM-DD).
-  # Entries without an arXiv date sort last; do not group by publication year.
-  sort_by: arxiv_updated
-  order: descending
+  # Explicit display order; revision-date metadata must not reorder papers.
+  sort_by: display_order
+  order: ascending
   group_by: none
 
 # Display different badges withs stats for your publications
@@ -307,6 +306,7 @@ filtered_bibtex_keywords:
     annotation,
     arxiv,
     arxiv_updated,
+    display_order,
     award,
     award_name,
     bibtex_show,
